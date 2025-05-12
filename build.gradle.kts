@@ -12,13 +12,49 @@ repositories {
     maven {
         url = uri("https://repo.maven.apache.org/maven2/")
     }
+    mavenCentral()
+    maven{
+    	url = uri("https://maven.clazzes.org/")
+    }
 }
 
 dependencies {
-    api(libs.org.htmlunit.neko.htmlunit)
+	implementation("org.apache.xerces:org.apache.xerces:2.12.2")
+	
+    implementation("org.htmlunit:neko-htmlunit:4.11.0")
+    {
+    	exclude(group = "xml-apis")
+    }
+    
+    //implementation(libs.org.htmlunit.neko.htmlunit){
+    //	exclude(group = "xml-apis", module = "xml-apis")
+    //}
+    
+    
+    implementation("org.jsoup:jsoup:1.20.1")
+    
     api(libs.org.slf4j.slf4j.api)
     api(libs.net.sf.cssbox.jstyleparser)
     testImplementation(libs.junit.junit)
+   	implementation("org.slf4j:slf4j-simple:2.0.17")
+   	
+   	//implementation("org.htmlunit:htmlunit:4.11.1"){
+    //	exclude(group= "xml-apis")
+    //}
+    
+  //  testImplementation(kotlin("test"))
+  	testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.0")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.0")
+    testImplementation("junit:junit:4.13")
+    testRuntimeOnly("org.junit.platform:junit-platform-suite-engine:1.12.2")
+}
+
+tasks.test {
+	useJUnitPlatform()
+	testLogging {
+        events("failed", "passed", "skipped", "standardError","standardOut", "started")
+    }
+    testLogging.showStandardStreams = true
 }
 
 group = "net.sf.cssbox"
@@ -31,6 +67,8 @@ publishing {
         from(components["java"])
     }
 }
+
+
 
 tasks.withType<JavaCompile>() {
     options.encoding = "UTF-8"
