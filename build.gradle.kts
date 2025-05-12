@@ -35,27 +35,30 @@ dependencies {
     
     api(libs.org.slf4j.slf4j.api)
     api(libs.net.sf.cssbox.jstyleparser)
-    testImplementation(libs.junit.junit)
+    
    	implementation("org.slf4j:slf4j-simple:2.0.17")
    	
    	//implementation("org.htmlunit:htmlunit:4.11.1"){
     //	exclude(group= "xml-apis")
     //}
     
-  //  testImplementation(kotlin("test"))
-  	testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.0")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.0")
-    testImplementation("junit:junit:4.13")
-    testRuntimeOnly("org.junit.platform:junit-platform-suite-engine:1.12.2")
+//	testImplementation(libs.junit.junit)
+//  	testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.0")
+//    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.0")
+//    testImplementation("junit:junit:4.13")
+//    testRuntimeOnly("org.junit.platform:junit-platform-suite-engine:1.12.2")
+
+    testImplementation("junit:junit:4.13.2")
+    
 }
 
-tasks.test {
-	useJUnitPlatform()
-	testLogging {
-        events("failed", "passed", "skipped", "standardError","standardOut", "started")
-    }
-    testLogging.showStandardStreams = true
-}
+//tasks.test {
+//	useJUnitPlatform()
+//	testLogging {
+//        events("failed", "passed", "skipped", "standardError","standardOut", "started")
+//    }
+//    testLogging.showStandardStreams = true
+//}
 
 group = "net.sf.cssbox"
 version = "5.0.3-SNAPSHOT"
