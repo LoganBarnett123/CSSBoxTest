@@ -61,17 +61,32 @@ public class ReferenceComparisonTest
     {
         ReferenceResults ref = new ReferenceResults();
         
+        System.out.println("Test Starts Here");
+        
        // String url_string = "file:/" + System.getProperty("user.dir") + "/src/test/java/org/fit/cssbox/test/html4/";
         String url_string = "file:/" + System.getProperty("user.dir") + "/html4sample/";
         URL url = new URL(url_string);
         
+        System.out.println(url);
+        
+        System.out.println(System.getProperty("user.dir"));
+        
         File file = new File(System.getProperty("user.dir") + ".");
+        
+      //Creating a File object for directory
+        //List of all files and directories
+        String contents[] = file.list();
+        System.out.println("List of files and directories in the specified directory:");
+        for(int i=0; i<contents.length; i++) {
+           System.out.println(contents[i]);
+        }
+        
        
         displayDirectory(file);
        
-        System.out.println(System.getProperty("user.dir"));
         
-        System.out.println(url);
+        
+        
         
         System.out.println("Test Ends Here");
         
