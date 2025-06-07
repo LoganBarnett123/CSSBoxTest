@@ -47,6 +47,12 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.io.IOException;
+import java.util.stream.Stream;
+
 
 /**
  *
@@ -88,6 +94,14 @@ public class ReferenceComparisonTest
        
       //  displayDirectory(file);
        
+        Path startPath = Paths.get(System.getProperty("user.dir"));
+        try (Stream<Path> stream = Files.walk(startPath)) {
+            stream.filter(Files::isRegularFile)
+                  .forEach(System.out::println);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
         
         
         
@@ -137,40 +151,7 @@ public class ReferenceComparisonTest
         Assert.assertTrue("All results passed " + errorcnt, errorcnt == 0);
     }
     
-    public static void displayDirectory(File dir)
-    {
 
-        try {
-            File[] files = dir.listFiles();
-
-            // For-each loop for iteration
-            for (File file : files) {
-
-                // Checking of file inside directory
-                if (file.isDirectory()) {
-
-                    // Display directories inside directory
-                    System.out.println(
-                        "directory:"
-                        + file.getCanonicalPath());
-                    displayDirectory(file);
-                }
-
-              // Simply get the path
-                else {
-                    System.out.println(
-                        "     file:"
-                        + file.getCanonicalPath());
-                }
-            }
-        }
-
-        // if any exceptions occurs printStackTrace
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    
     
     
     
