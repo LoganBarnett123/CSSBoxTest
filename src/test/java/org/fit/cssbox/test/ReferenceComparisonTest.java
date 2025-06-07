@@ -71,7 +71,7 @@ public class ReferenceComparisonTest
         
        // String url_string = "file:/" + System.getProperty("user.dir") + "/src/test/java/org/fit/cssbox/test/html4/";
        // String url_string = "file:/" + System.getProperty("user.dir") + "/html4sample/";
-        String url_string = "file:/" + System.getProperty("user.dir") + "/testsuite/baseline/nightly-unstable/html4/";
+        String url_string = "file:" + System.getProperty("user.dir") + "/testsuite/baseline/nightly-unstable/html4/";
         
       //  String url_string = "file://home/runner/work/CSSBoxTesting/CSSBoxTesting/testsuite/tree/main/baseline/nightly-unstable/html4/";
         
