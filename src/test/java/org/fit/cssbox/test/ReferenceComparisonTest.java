@@ -77,6 +77,7 @@ public class ReferenceComparisonTest
 
         URL url = new URL(url_string);
 
+        
         TestBatch tester = new TestBatch(url, THREADS);
         
         int errorcnt = 0;
