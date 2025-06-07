@@ -7,6 +7,7 @@ plugins {
     `maven-publish`
 }
 
+
 repositories {
     mavenLocal()
     maven {
@@ -16,6 +17,8 @@ repositories {
     maven{
     	url = uri("https://maven.clazzes.org/")
     }
+    
+    maven { url = uri("https://jitpack.io") }
 }
 
 dependencies {
@@ -34,7 +37,7 @@ dependencies {
     implementation("org.jsoup:jsoup:1.20.1")
     
     api(libs.org.slf4j.slf4j.api)
-    api(libs.net.sf.cssbox.jstyleparser)
+    
     
    	implementation("org.slf4j:slf4j-simple:2.0.17")
    	
@@ -50,7 +53,17 @@ dependencies {
 
     testImplementation("junit:junit:4.13.2")
     
+    
+  //  api(libs.net.sf.cssbox.jstyleparser)
+    
+    implementation("com.github.LoganBarnett123:jStyleParser:v1.0.0")
+    
+  //  implementation("com.github.stormcloakgames:jStyleParser:-SNAPSHOT")
+    
+    
 }
+
+
 
 //tasks.test {
 //	useJUnitPlatform()
