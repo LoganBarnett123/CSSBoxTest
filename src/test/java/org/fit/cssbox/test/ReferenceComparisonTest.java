@@ -64,25 +64,26 @@ public class ReferenceComparisonTest
         System.out.println("Test Starts Here");
         
        // String url_string = "file:/" + System.getProperty("user.dir") + "/src/test/java/org/fit/cssbox/test/html4/";
-        String url_string = "file:/" + System.getProperty("user.dir") + "/html4sample/";
+       // String url_string = "file:/" + System.getProperty("user.dir") + "/html4sample/";
+        String url_string = "file:/" + System.getProperty("user.dir") + "/testsuite/tree/main/baseline/nightly-unstable/html4/";
         URL url = new URL(url_string);
         
         System.out.println(url);
         
-        System.out.println(System.getProperty("user.dir"));
+        System.out.println(System.getProperty("user.dir"));		// /home/runner/work/CSSBoxTest/CSSBoxTest
         
-        File file = new File(System.getProperty("user.dir") + ".");
+    //    File file = new File(System.getProperty("user.dir") + ".");
         
       //Creating a File object for directory
         //List of all files and directories
-        String contents[] = file.list();
-        System.out.println("List of files and directories in the specified directory:");
-        for(int i=0; i<contents.length; i++) {
-           System.out.println(contents[i]);
-        }
+    //    String contents[] = file.list();
+    //    System.out.println("List of files and directories in the specified directory:");
+    //    for(int i=0; i<contents.length; i++) {
+    //       System.out.println(contents[i]);
+    //    }
         
        
-        displayDirectory(file);
+      //  displayDirectory(file);
        
         
         
