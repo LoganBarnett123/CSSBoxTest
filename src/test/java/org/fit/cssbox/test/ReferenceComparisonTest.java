@@ -71,9 +71,11 @@ public class ReferenceComparisonTest
         
        // String url_string = "file:/" + System.getProperty("user.dir") + "/src/test/java/org/fit/cssbox/test/html4/";
        // String url_string = "file:/" + System.getProperty("user.dir") + "/html4sample/";
-      //  String url_string = "file:/" + System.getProperty("user.dir") + "/testsuite/.git/tree/main/baseline/nightly-unstable/html4/";
+        String url_string = "file:/" + System.getProperty("user.dir") + "/testsuite/baseline/nightly-unstable/html4/";
         
-        String url_string = "file://home/runner/work/CSSBoxTesting/CSSBoxTesting/testsuite/tree/main/baseline/nightly-unstable/html4/";
+      //  String url_string = "file://home/runner/work/CSSBoxTesting/CSSBoxTesting/testsuite/tree/main/baseline/nightly-unstable/html4/";
+        
+      //  /home/runner/work/CSSBoxTest/CSSBoxTest/testsuite/baseline/nightly-unstable/html4/
         
         URL url = new URL(url_string);
         
@@ -94,13 +96,13 @@ public class ReferenceComparisonTest
        
       //  displayDirectory(file);
        
-        Path startPath = Paths.get(System.getProperty("user.dir"));
-        try (Stream<Path> stream = Files.walk(startPath)) {
-            stream.filter(Files::isRegularFile)
-                  .forEach(System.out::println);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+      //  Path startPath = Paths.get(System.getProperty("user.dir"));
+      //  try (Stream<Path> stream = Files.walk(startPath)) {
+      //      stream.filter(Files::isRegularFile)
+      //            .forEach(System.out::println);
+      //  } catch (IOException e) {
+      //      e.printStackTrace();
+      //  }
         
         
         
